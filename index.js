@@ -23,7 +23,7 @@ function onClickMoreBtn(){
     const nextPage = curPage + 1;
     mergeHistoryState({curPage: nextPage});
 
-    const data = await createData({curPage: getHistoryPageState().curPage, pageSize: SIZE});
+    const data = await createData({curPage: getHistoryPageState().curPage, pageSize: PAGE_SIZE});
 
 }
 
@@ -33,11 +33,10 @@ async function hasPagingHistoryState(){
 
 async function getTemp(pageState){
   
-    const data = await createData({curPage: pageSize.curPage: SIZE});
+    const data = await createData({curPage: pageSize.curPage: SIZE: PAGE_SIZE});
     const temp = createTemp(data);
 
     mergeHistoryState({temp, curPage, temp});
-
     document.body.append(temp);
 }
 
@@ -69,4 +68,9 @@ function getHistoryPageState(historyState){
     }else{
         return DEFAULT_PAGE_STATE;
     }
+}
+
+function updateHistoryPageState({temp, curPage, yPosition, size}){
+    const currentPageHistory = 
+    window.history.replaceState(arguments[0]);
 }
