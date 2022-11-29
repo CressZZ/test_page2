@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <a href="https://naver.com"></a>
+    <a href="https://naver.com">naver</a>
 </head>
 <body>
     <script>
         document.addEventListener('DOMContentLoaded', ()=>{
-            alert('loaded!');
+            document.append('DOMContentLoaded');
         })
         $(function(){
-            alert('jqueyr document loaded')
+            document.append('jqueyr document loaded');
+
         })
 
         window.addEventListener('pageshow', ()=>{
-            alert('pageshow!');
-        })
+            document.append('pageshow');
+        });
+
+        document.append( (window?.performance?.getEntriesByType('navigation')?.[0]?.type));
+
     </script>
 </body>
 </html>
