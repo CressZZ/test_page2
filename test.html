@@ -11,19 +11,19 @@
 <body>
     <script>
         document.addEventListener('DOMContentLoaded', ()=>{
-            document.body.append('DOMContentLoaded\n');
+            document.body.innerHTML += ('<div>DOMContentLoaded</div>');
         })
 
         $(function(){
-            document.body.append('jqueyr document loaded\n');
+            document.body.innerHTML += ('<div>jqueyr document loaded</div>');
 
         })
 
         window.addEventListener('pageshow', ()=>{
-            document.body.append('pageshow\n');
+            document.body.innerHTML += ('<div>pageshow</div>');
         });
 
-        document.body.append( (window?.performance?.getEntriesByType('navigation')?.[0]?.type));
+        document.body.innerHTML += ( `<div>${(window?.performance?.getEntriesByType('navigation')?.[0]?.type)}</div>` );
 
     </script>
 </body>
