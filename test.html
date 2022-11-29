@@ -27,7 +27,10 @@
         });
 
         document.body.innerHTML += ( `<div>${(window?.performance?.getEntriesByType('navigation')?.[0]?.type)}  ${now}</div>` );
+        $(window).on('hashchange', () => {
+            document.body.innerHTML += (`<div>hash Change</div>  ${now}`);
 
+        });
     </script>
 </body>
 </html>
