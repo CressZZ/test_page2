@@ -11,16 +11,16 @@
 <body>
     <script>
         document.addEventListener('DOMContentLoaded', ()=>{
-            document.body.append('DOMContentLoaded');
+            document.body.append('DOMContentLoaded\n');
         })
 
         $(function(){
-            document.body.append('jqueyr document loaded');
+            document.body.append('jqueyr document loaded\n');
 
         })
 
         window.addEventListener('pageshow', ()=>{
-            document.body.append('pageshow');
+            document.body.append('pageshow\n');
         });
 
         document.body.append( (window?.performance?.getEntriesByType('navigation')?.[0]?.type));
